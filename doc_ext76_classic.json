@@ -3786,7 +3786,7 @@
                 "name": "height",
                 "type": "Number",
                 "doc": "The height of the navigator component.\n",
-                "default": "75"
+                "default": "His "
             },
             {
                 "name": "highlightItem"

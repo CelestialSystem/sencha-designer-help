@@ -1,0 +1,464 @@
+// Designer specific class documentation
+{
+    "BasicFunction": {
+        "type": "BasicFunction",
+        "doc": "A basic function that can be added to any top level view, model, controller, store, and even the application. Note: a fn must be defined. Once configured you can right click this to add code.",
+        "configs": [{
+                "name": "fn",
+                "type": "string",
+                "doc": "The method name.",
+                "noSiteHelp": true
+            },{
+                "name": "params",
+                "type": "array",
+                "doc": "<p>The set of arguments that will be passed.</p>",
+                "noSiteHelp": true
+            }],
+        "noSiteHelp": true
+    },
+    "StaticFunction": {
+        "type": "StaticFunction",
+        "doc": "A static function that can be added to any top level view, model, controller, store, and even the application. Note: a fn must be defined. Once configured you can right click this to add code.",
+        "noSiteHelp": true
+    },
+    "ControllerAction": {
+        "type": "ControllerAction",
+        "doc": "Controller action represents a single action within a controller. Action binds a component (found via Component Query) with an event handler. Note: a name (event name), fn, and controlQuery must be defined.",
+        "configs": [{
+                "name": "controlQuery",
+                "type": "string",
+                "doc": "CSS-like selector to find a matching component on the page.",
+                "noSiteHelp": true
+            }, {
+                "name": "targetType",
+                "type": "string",
+                "doc": "Select component type to get list of event types",
+                "noSiteHelp": true
+            }, {
+                "name": "name",
+                "type": "string",
+                "doc": "Event name for which handler needs to be associated",
+                "noSiteHelp": true
+            }],
+        "noSiteHelp": true
+    },
+    "ControllerReference": {
+        "type": "ControllerReference",
+        "doc": "Controller reference is a convenient way to create a reference using a name and a selector.",
+        "configs": [{
+                "name": "selector",
+                "type": "string",
+                "doc": "CSS-like selector to find a matching component.",
+                "noSiteHelp": true
+            },{
+                "name": "ref",
+                "type": "string",
+                "doc": "the reference name to use e.g. theList<br><br>A getter will automatically be generated in this case getTheList()",
+                "noSiteHelp": true
+            },{
+                "name": "xtype",
+                "type": "string",
+                "doc": "the xtype of the component to instantiate if autoCreate is true",
+                "noSiteHelp": true
+            },{
+                "name": "autoCreate",
+                "type": "boolean",
+                "doc": "if set to true and a component doesn't match the selector, it will be automatically created when you call access it using the getter inside your Controller",
+                "noSiteHelp": true
+            }],
+        "noSiteHelp": true
+    },
+    "ControllerRoute": {
+        "type": "ControllerRoute",
+        "doc": "Routes are a simple mapping between urls and controller actions - whenever a certain type of url is detected in the address bar the corresponding Controller action is called automatically",
+        "configs": [{
+                "name": "url",
+                "type": "string",
+                "doc": "The url to bind the controller action (fn) to. Note: params are prefixed with ':' <br> example: users/:id",
+                "noSiteHelp": true
+            },{
+                "name": "action",
+                "type": "string",
+                "doc": "The name of the controller action that should be called when url matches",
+                "noSiteHelp": true
+            },{
+                "name": "params",
+                "type": "array",
+                "doc": "<p>The set of arguments that will be both passed into the controller action (fn) as well as part of the url signature</p><p>example: url: users/edit, params: [id] => users/edit/:id</p>",
+                "noSiteHelp": true
+            }],
+        "noSiteHelp": true
+    },
+    "RouteCondition": {
+        "type": "RouteCondition",
+        "doc": "Route conditions can be added to controller routes to add more specificity.  e.g. id should be an integer [0-9]+",
+        "configs": [{
+                "name": "param",
+                "type": "string",
+                "doc": "The parameter to add the condition to",
+                "noSiteHelp": true
+            },{
+                "name": "condition",
+                "type": "string",
+                "doc": "The condition in the form of regular expression (regex)",
+                "noSiteHelp": true
+            }],
+        "noSiteHelp": true
+    },
+    "ApplicationAction": {
+        "type": "ApplicationAction",
+        "doc": "Application action allows you to bind an event handler to an application event.  Note: a name (event name) and fn must be defined.<br><br> this.getApplication().on([<br>    { event: 'someEvent', fn: this.onSomeEvent }<br>]);",
+        "configs": [{
+                "name": "fn",
+                "type": "string",
+                "doc": "The method the event invokes. Will be called with params given to fireEvent.",
+                "noSiteHelp": true
+            },{
+                "name": "params",
+                "type": "array",
+                "doc": "<p>The set of arguments that will be passed to the controller's action</p><p>Defaults to: []</p>",
+                "noSiteHelp": true
+            },{
+                "name": "scope",
+                "type": "object",
+                "doc": "<p>The scope to fire the configured handler in.</p>",
+                "noSiteHelp": true
+            }],
+        "noSiteHelp": true
+    },
+    "EventBinding": {
+        "type": "EventBinding",
+        "doc": "A basic event binding that can be added to any Observable. This binds a handler to an event e.g. onButtonClick -> click. Note: a name (event name) and fn must be defined. Once configured you can right click this to add code",
+        "configs": [{
+                "name": "name",
+                "type": "string",
+                "doc": "The name of the event to listen for.",
+                "noSiteHelp": true
+            },{
+                "name": "fn",
+                "type": "string",
+                "doc": "The method the event invokes. Will be called with arguments given to fireEvent plus the options parameter described below.",
+                "noSiteHelp": true
+            },{
+                "name": "buffer",
+                "type": "number",
+                "doc": "Causes the handler to be scheduled to run in an Ext.util.DelayedTask delayed by the specified number of milliseconds. If the event fires again within that time, the original handler is not invoked, but the new handler is scheduled in its place.",
+                "noSiteHelp": true
+            },{
+                "name": "delay",
+                "type": "number",
+                "doc": "The number of milliseconds to delay the invocation of the handler after the event fires.",
+                "noSiteHelp": true
+            },{
+                "name": "element",
+                "type": "string",
+                "doc": "This option is only valid for listeners bound to Components. The name of a Component property which references an element to add a listener to.",
+                "noSiteHelp": true
+            },{
+                "name": "single",
+                "type": "boolean",
+                "doc": "True to add a handler to handle just the next firing of the event, and then remove itself.",
+                "noSiteHelp": true
+            }],
+        "noSiteHelp": true
+    },
+    "Scss Resource": {
+        "doc" : "Add your own scss to be compiled with your custom theme",
+        "noSiteHelp": true
+    },
+    "Scss Tpl Resource": {
+        "doc" : "Add your own scss scoped to the parent template to be compiled with your custom theme",
+        "noSiteHelp": true
+    },
+    "Custom Theme": {
+        "doc": "Theme exposing theme variables that provide adjustability the look of your app. See the Application Styling guide.",
+        "noSiteHelp": true
+    },
+    "Quick Theme": {
+        "doc": "Theme with an improved and reduced set of theme variables to adjust for quicker theme styling. Can be converted to a regular custom theme. See the Application Styling guide.",
+        "noSiteHelp": true
+    },
+    "(Architect)": {
+        "type": "initialView",
+        "doc": "The initial view shown on launching the app",
+        "configs": [{
+                "name": "displayName",
+                "type": "string",
+                "doc": "A custom label for this instance to be displayed in the inspector. Does not affect the generated code.",
+                "noSiteHelp": true
+            },{
+                "name": "inheritable",
+                "type": "boolean",
+                "doc": "Set this Boolean to allow subclasses to inherit this function.",
+                "noSiteHelp": true
+            },{
+                "name": "initialView",
+                "type": "boolean",
+                "doc": "The initial view shown on launching the app.",
+                "noSiteHelp": true
+            },{
+                "name": "userAlias",
+                "type": "string",
+                "doc": "Short name for class name. Most useful for defining xtypes for widgets.",
+                "noSiteHelp": true
+            },{
+                "name": "userClassName",
+                "type": "string",
+                "doc": "Class name of the top level instance.",
+                "noSiteHelp": true
+            },{
+                "name": "createAlias",
+                "type": "string",
+                "doc": "Allows the user to override the alias used when instantiating an instance of the class.",
+                "noSiteHelp": true
+            },{
+                "name": "createClass",
+                "type": "string",
+                "doc": "Allows the user to override the class name used when instantiating an instance of the class.",
+                "noSiteHelp": true
+            },{
+                "name": "favIcon - url",
+                "type": "string",
+                "doc": "URL address to the favIcon file relative to the project root folder.",
+                "noSiteHelp": true
+            },{
+                "name": "favIcon - mime-type",
+                "type": "string",
+                "doc": "Mime type of the favIcon file. If the URL ends with one of these extensions (*.bmp, *.gif, *.ico, *.jpg, *.jpeg, *.png, *.tif) you can leave this option empty.",
+                "noSiteHelp": true
+            },{
+                "name": "title",
+                "type": "string",
+                "doc": "Specifies the title of the entry page. If you leave this option empty, the name of entry page will be the project name.",
+                "noSiteHelp": true
+            }
+        ],
+        "noSiteHelp": true
+    },
+    "EmailValidation": {
+        "type": "emailvalidation",
+        "doc": "Validates that an email string is in the correct format.",
+        "configs": [],
+        "noSiteHelp": true
+    },
+    "ExclusionValidation": {
+        "type": "exclusionvalidation",
+        "doc": "Validates that the given value is present in the configured list.",
+        "configs": [],
+        "noSiteHelp": true
+    },
+    "FormatValidation": {
+        "type": "formatvalidation",
+        "doc": "Validates that the given value passes validation against the configured matcher regex.",
+        "configs": [],
+        "noSiteHelp": true
+    },
+    "InclusionValidation": {
+        "type": "inclusionvalidation",
+        "doc": "Validates that the given value is present in the configured list.",
+        "configs": [],
+        "noSiteHelp": true
+    },
+    "LengthValidation": {
+        "type": "lengthvalidation",
+        "doc": "Validates that the given value is between the configured min and max values.",
+        "configs": [],
+        "noSiteHelp": true
+    },
+    "PresenceValidation": {
+        "type": "presencevalidation",
+        "doc": "Validates that the given value is present.",
+        "configs": [],
+        "noSiteHelp": true
+    },
+    "RangeValidation": {
+        "type": "rangevalidation",
+        "doc": "Validates that the given value is between the configured min and max values.",
+        "configs": [],
+        "noSiteHelp": true
+    },
+    "BasicEventBinding": {
+        "ref": "EventBinding"
+    },
+    "Ext.data.JsonStore": {
+        "doc": "Small helper class to make creating Ext.data.Stores from JSON data easier. A JsonStore will be automatically configured with a Ext.data.reader.Json."
+    },
+    "Ext.data.XmlStore": {
+        "doc": "Small helper class to make creating Ext.data.Stores from XML data easier. A XmlStore will be automatically configured with a Ext.data.reader.Xml."
+    },
+    "Ext.data.proxy.SyncStorage": {
+        "doc": "Proxy to communicate with Sencha IO",
+        "noSiteHelp": true
+    },
+    "Ext.data.proxy.JsonP": {
+        "configs": [{
+            "name": "url",
+            "type": "string",
+            "doc": "<p>The URL from which to request the data object.",
+            "href": "Server.html#Ext-data-proxy-Server-cfg-url"
+        }]
+    },
+    "Plugin": {
+        "configs": [{
+            "name": "pluginId",
+            "type": "string",
+            "doc": "<p>An Id value for plugins used to retrieve the bound plugin by its pluginId eg grid.getPlugin(pluginId).",
+            "noSiteHelp": true
+        }]
+    },
+    "(Layout)": {
+        "configs": [{
+                "name": "align",
+                "type": "string",
+                "doc": "<p>Controls how the child items of the container are aligned. </p>",
+                "default": "\"stretch\""
+            },
+            {
+                "name": "pack",
+                "type": "string",
+                "doc": "<p>Controls how the child items of the container are packed together.</p>",
+                "default": "null"
+            },
+            {
+                "name": "animation",
+                "type": "ext.fx.layout.card",
+                "doc": "<p>Layout animation configuration\nControls how layout transitions are animated.  Currently only available for\nCard Layouts</p>",
+                "default": "null"
+            }
+        ]
+    },
+    "Direct Resource": {
+        "doc":  "Use a Direct Resource to configure the location of an external Ext.Direct API descriptor. This is required if you wish to use a Direct Proxy in your data stores.",
+        "noSiteHelp": true,
+        "configs": [{
+            "name": "url",
+            "type": "string",
+            "doc": "<p>The destination of the link is given by the href attribute.</p>",
+            "noSiteHelp": true
+        }]
+    },
+    "CSS Resource": {
+        "doc":  "The link element with rel=stylesheet allows authors to link their document to a external stylesheet.",
+        "noSiteHelp": true,
+        "configs": [{
+            "name": "id",
+            "type": "string",
+            "doc": "<p>This is the internal Architect name of this CSS resource.</p>",
+            "noSiteHelp": true
+        }, {
+            "name": "url",
+            "type": "string",
+            "doc": "<p>The destination of the link is given by the href attribute.</p>",
+            "noSiteHelp": true
+        }]
+    },
+    "JS Resource": {
+        "doc":  "The script element with type=javascript allows authors to include external script in their document",
+        "noSiteHelp": true,
+        "configs": [{
+            "name": "id",
+            "type": "string",
+            "doc": "<p>This is the internal Architect name of this JS resource.</p>",
+            "noSiteHelp": true
+        }, {
+            "name": "url",
+            "type": "string",
+            "doc": "<p>This attribute specifies the URI of an external script. If the script on the local file system is referred then the path have to be relative to the project root folder.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "defer",
+            "type": "boolean",
+            "doc": "<p>This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "async",
+            "type": "boolean",
+            "doc": "<p>Set this Boolean attribute to indicate that the browser should, if possible, execute the script asynchronously.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "charset",
+            "type": "string",
+            "doc": "<p>The charset attribute gives the character encoding of the external script resource.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "includeAfterAppJS",
+            "type": "boolean",
+            "doc": "<p>If true, this JS resource will be loaded after your application code, rather than before.</p>",
+            "noSiteHelp": true
+        }]
+    },
+    "(Cmd)": {
+        "noSiteHelp": true,
+        "configs": [{
+            "name": "update",
+            "type": "string",
+            "doc": "<p>Indicates whether Sencha CMD should process only the latest changes in this resource or the entire file every time it compiles.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "remote",
+            "type": "string",
+            "doc": "<p>Indicates that a script is loaded remotely, and should not be compiled in by Sencha Cmd.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "requiresSdk",
+            "type": "string",
+            "doc": "<p>Indicates that a script requires the framework SDK in order to run and must be compiled after.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "bootstrap",
+            "type": "string",
+            "doc": "<p>Indicates that a script should be compiled in the bootstrap by Sencha Cmd.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "x-bootstrap",
+            "type": "string",
+            "doc": "<p>Indicates that a script should be compiled in the bootstrap by Sencha Cmd.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "x-compile",
+            "type": "string",
+            "doc": "<p>Indicates that a script should be compiled normally by Sencha Cmd.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "includeInBundle",
+            "type": "boolean",
+            "doc": "<p>Set to true to include this file in the concatenated classes.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "Always Export",
+            "type": "boolean",
+            "doc": "<p>Set to true to make sure this theme is included in the project compile even when it is not applied.</p>",
+            "noSiteHelp": true
+        },{
+            "name": "platform",
+            "type": "object",
+            "doc": "<p>Platforms and devices that should use this theme.</p>",
+            "noSiteHelp": true
+        }]
+    },
+    "Custom Event": {
+        "doc": "Declares the name and signature of a custom event that can be fired by a top-level observable class. Once a custom event is defined it will appear in the list of known events for that class.",
+        "noSiteHelp": true,
+        "configs": [{
+            "name": "name",
+            "type": "string",
+            "doc": "Specifies the name of the custom event.",
+            "noSiteHelp": true
+        }, {
+            "name": "params",
+            "type": "array",
+            "doc": "Specifies the names of the parameters that will be passed to the event handler.",
+            "noSiteHelp": true
+        }]
+    },
+    "Class": {
+        "doc": "An arbitrary class that can extend any other class. This can be used for example to create helper classes for use in your event handlers or controller logic, however Architect will be unable to display it in the canvas or provide any other special behavior.",
+        "noSiteHelp": true,
+        "configs": [{
+            "name": "extend",
+            "type": "string",
+            "doc": "The parent class that this class extends.",
+            "noSiteHelp": true
+        }]
+    }
+}

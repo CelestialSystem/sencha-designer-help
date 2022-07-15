@@ -1,0 +1,176 @@
+// this file is used to manually add help information not pulled from the docs
+{
+    "Ext.chart.axis.Radial": {
+        "type": "Ext.chart.axis.Radial",
+        "doc": "Radial Axis is the axis to be used with a Radar Series. The Radial axis is a circular display of numerical data by steps, with the number of circles equivalent to the defined number of `steps`.",
+        "configs": []
+    },
+    "ActionColumnItem": {
+        "type": "ActionColumnItem",
+        "doc": "<p>A Grid header type which renders an icon, or a series of icons in a grid cell, and offers a scoped click\nhandler for each icon.",
+        "configs": [
+            {
+                "name": "altText",
+                "type": "string",
+                "doc": "<p>The alt text to use for the image element. Defaults to <tt>''</tt>.",
+                "noSiteHelp": true
+            },
+            {
+                "name": "icon",
+                "type": "string",
+                "doc": "<p>The URL of an image to display as the clickable element in the column.\nOptional - defaults to <code>Ext.BLANK_IMAGE_URL</code>.",
+                "noSiteHelp": true
+            },
+            {
+                "name": "iconCls",
+                "type": "string",
+                "doc": "<p>A CSS class to apply to the icon image. To determine the class dynamically, configure the Column with a <code>getClass</code> function.",
+                "noSiteHelp": true
+            },
+            {
+                "name": "tooltip",
+                "type": "string",
+                "doc": "<p>A tooltip message to be displayed on hover. Ext.tip.QuickTipManager must have\nbeen initialized.",
+                "noSiteHelp": true
+            }
+        ],
+        "noSiteHelp": true
+    },
+    "Ext.layout.container.HBox": {
+        "type": "Ext.layout.container.HBox",
+        "doc": "<p>A layout that arranges items horizontally across a Container. This layout optionally divides available horizontal space between child items containing a numeric flex configuration.",
+        "configs": [
+            {
+                "name": "align",
+                "type": "string",
+                "doc": "<p>Controls how the child items of the container are aligned. </p>",
+                "default": "top"
+            },
+            {
+                "name": "animate",
+                "type": "boolean/number/object",
+                "doc": "<p>If truthy, child Component are <i>animated</i> into position whenever the Container\nis layed out. If this option is numeric, it is used as the animation duration in milliseconds.</p>",
+                "default": null
+            },
+            {
+                "name": "clearInnerCtOnLayout",
+                "type": "boolean",
+                "doc": "\n",
+                "default": "false"
+            },
+            {
+                "name": "defaultMargins",
+                "type": "object",
+                "doc": "<p>If the individual contained items do not have a <tt>margins</tt>\nproperty specified or margin specified via CSS, the default margins from this property will be\napplied to each item.</p>",
+                "default": "{top: 0, right: 0, bottom: 0, left: 0}"
+            },
+            {
+                "name": "flex",
+                "type": "number",
+                "doc": "<p>This configuration option is to be applied to <b>child <tt>items</tt></b> of the container managed\nby this layout. Each child item with a <tt>flex</tt> property will be flexed <b>horizontally</b>\naccording to each item's <b>relative</b> <tt>flex</tt> value compared to the sum of all items with\na <tt>flex</tt> value specified.  Any child items that have either a <tt>flex = 0</tt> or\n<tt>flex = undefined</tt> will not be 'flexed' (the initial size will not be changed).</p>",
+                "default": null
+            },
+            {
+                "name": "pack",
+                "type": "string",
+                "doc": "<p>Controls how the child items of the container are packed together.</p>",
+                "default": null
+            },
+            {
+                "name": "padding",
+                "type": "string",
+                "doc": "<p>Sets the padding to be applied to all child items managed by this layout.</p>",
+                "default": "0"
+            },
+            {
+                "name": "shrinkToFit",
+                "type": "boolean",
+                "doc": "<p>True (the default) to allow fixed size components to shrink (limited to their\nminimum size) to avoid overflow. False to preserve fixed sizes even if they cause\noverflow.</p>",
+                "default": "true"
+            }
+        ],
+        "events": []
+    },
+    "Ext.layout.container.VBox": {
+        "type": "Ext.layout.container.VBox",
+        "doc": "<p>A layout that arranges items vertically down a Container. This layout optionally divides available vertical space between child items containing a numeric flex configuration.",
+        "configs": [
+            {
+                "name": "align",
+                "type": "string",
+                "doc": "<p>Controls how the child items of the container are aligned. </p>",
+                "default": "left"
+            },
+            {
+                "name": "animate",
+                "type": "boolean/number/object",
+                "doc": "<p>If truthy, child Component are <i>animated</i> into position whenever the Container\nis layed out. If this option is numeric, it is used as the animation duration in milliseconds.</p>",
+                "default": null
+            },
+            {
+                "name": "clearInnerCtOnLayout",
+                "type": "boolean",
+                "doc": "\n",
+                "default": "false"
+            },
+            {
+                "name": "defaultMargins",
+                "type": "object",
+                "doc": "<p>If the individual contained items do not have a <tt>margins</tt>\nproperty specified or margin specified via CSS, the default margins from this property will be\napplied to each item.</p>",
+                "default": "{top: 0, right: 0, bottom: 0, left: 0}"
+            },
+            {
+                "name": "flex",
+                "type": "number",
+                "doc": "<p>This configuration option is to be applied to <b>child <tt>items</tt></b> of the container managed\nby this layout. Each child item with a <tt>flex</tt> property will be flexed <b>horizontally</b>\naccording to each item's <b>relative</b> <tt>flex</tt> value compared to the sum of all items with\na <tt>flex</tt> value specified.  Any child items that have either a <tt>flex = 0</tt> or\n<tt>flex = undefined</tt> will not be 'flexed' (the initial size will not be changed).</p>",
+                "default": null
+            },
+            {
+                "name": "pack",
+                "type": "string",
+                "doc": "<p>Controls how the child items of the container are packed together.</p>",
+                "default": null
+            },
+            {
+                "name": "padding",
+                "type": "string",
+                "doc": "<p>Sets the padding to be applied to all child items managed by this layout.</p>",
+                "default": "0"
+            },
+            {
+                "name": "shrinkToFit",
+                "type": "boolean",
+                "doc": "<p>True (the default) to allow fixed size components to shrink (limited to their\nminimum size) to avoid overflow. False to preserve fixed sizes even if they cause\noverflow.</p>",
+                "default": "true"
+            }
+        ],
+        "events": []
+    },
+    "Ext.layout.container.Absolute": {
+        "type": "Ext.layout.container.Absolute",
+        "doc": "<p>This is a layout that inherits the anchoring of Ext.layout.container.Anchor and adds the\nability for x/y positioning using the standard x and y component config options.",
+        "configs": [
+            {
+                "name": "x",
+                "type": "number",
+                "doc": "<p>The x position relative to the container.</p>",
+                "default": null
+            },
+            {
+                "name": "y",
+                "type": "string",
+                "doc": "<p>The y position relative to the container.</p>",
+                "default": null
+            }
+        ],
+        "events": []
+    },
+    "Ext.selection.CellModel": {
+        "type": "Ext.selection.CellModel",
+        "doc": "<p>Cell Selection Model</p>"
+    },
+    "Ext.selection.RowModel": {
+        "type": "Ext.selection.RowModel",
+        "doc": "<p>Implement row based navigation via keyboard.</p>"
+    }
+}

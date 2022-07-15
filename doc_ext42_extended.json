@@ -7,7 +7,7 @@
     },
     "ActionColumnItem": {
         "type": "ActionColumnItem",
-        "doc": "<p>A Grid header type which renders an icon, or a series of icons in a grid cell, and offers a scoped click\nhandler for each icon.",
+        "doc": "<p>A Grid header type which renders an icon, or a series of icons in a grid cell, and offers a scoped click handler for each icon.",
         "configs": [
             {
                 "name": "altText",
@@ -168,9 +168,5 @@
     "Ext.selection.CellModel": {
         "type": "Ext.selection.CellModel",
         "doc": "<p>Cell Selection Model</p>"
-    },
-    "Ext.selection.RowModel": {
-        "type": "Ext.selection.RowModel",
-        "doc": "<p>Implement row based navigation via keyboard.</p>"
     }
 }
